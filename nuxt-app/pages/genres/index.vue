@@ -2,10 +2,10 @@
   <div v-if="genres">
     <h1 class="text-5xl font-bold m-12">Genres</h1>
     <div class="m-9">
-    <ul class="flex flex-row flex-wrap justify-between">
+    <ul class="flex flex-row flex-wrap justify-between items-stretch">
       <li v-for="genre in genres" :key="genre.name" class="m-3">
         <nuxt-link :to="`/genres/${genre.name}`">
-          <div class="card w-48 bg-base-100 shadow-xl">
+          <div class="card w-48 bg-base-100 shadow-xl min-h-full">
             <figure>
               <img :src="`https://source.unsplash.com/512x512/?${genre.name.split(' ').join('-')}-music`"
                 :alt="`${_.capitalize(genre.name)} genre image`" height="256" width="256"/>
