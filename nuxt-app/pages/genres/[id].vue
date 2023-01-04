@@ -1,21 +1,25 @@
 <template>
-  <div v-if="genre">
+  <div class="hero min-h-full bg-base-200 flex flex-col items-start">
     <h1 class="text-5xl font-bold m-12">Genre</h1>
-    <div class="m-12">
-    <h2>
-      {{ genre.name }}
-    </h2>
-    <img :src="`https://source.unsplash.com/512x512/?${genre.name.split(' ').join('-')}-music`" />
-    <p v-html="genre.wiki.content">
-    </p>
+    <div class="hero-content flex-col lg:flex-row m-12 p-0" v-if="genre">
+        <img :src="`https://source.unsplash.com/512x512/?${genre.name.split(' ').join('-')}-music`"
+          class="max-w-sm rounded-lg shadow-2xl" />
+        <div>
+          <h2 class="text-5xl font-bold">{{ _.capitalize(genre.name) }}</h2>
+          <p class="py-6" v-html="genre.wiki.content"></p>
+        </div>
     </div>
+    <div class="hero-content" v-else>Please refresh the webpage!</div>
   </div>
-  <div v-else>Please refresh the webpage!</div>
 </template>
 
 <script lang="ts" setup>
+import _ from "lodash";
 const route = useRoute();
-const {data: genresData} = await useFetch<{tag: { name: string; count: number; reach: number; wiki: {summary: string; content: string;}
-}}>(() => `https://ws.audioscrobbler.com/2.0/?method=tag.getinfo&tag=${route.params.id}&api_key=e2ec98b041891e5f1163138c3515c552&format=json`);
+const { data: genresData } = await useFetch<{
+  tag: {
+    name: string; count: number; reach: number; wiki: { summary: string; content: string; }
+  }
+}>(() => `https://ws.audioscrobbler.com/2.0/?method=tag.getinfo&tag=${route.params.id}&api_key=e2ec98b041891e5f1163138c3515c552&format=json`);
 const genre = genresData.value?.tag;
 </script>
