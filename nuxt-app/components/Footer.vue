@@ -1,17 +1,7 @@
 <template>
-  <footer>
-    <p>Created by Maciej Błędkowski i resztę</p>
+  <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+    <div>
+      <p>Copyleft © 2023 - Some rights reserved by Maciej Błędkowski</p>
+    </div>
   </footer>
 </template>
-
-<style lang="scss" scoped>
-footer {
-  padding: 1rem;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ccc;
-  p {
-    margin: 0;
-    font-size: 0.8rem;
-  }
-}
-</style>
