@@ -1,9 +1,9 @@
 <template>
   <div v-if="genres">
     <h1 class="text-5xl font-bold m-12">Genres</h1>
-    <div class="m-12">
-    <ul>
-      <li v-for="genre in genres" :key="genre.name" class="m-6">
+    <div class="m-9">
+    <ul class="flex flex-row flex-wrap justify-between">
+      <li v-for="genre in genres" :key="genre.name" class="m-3">
         <nuxt-link :to="`/genres/${genre.name}`">
           <div class="card w-48 bg-base-100 shadow-xl">
             <figure>
@@ -28,11 +28,3 @@ const { data: genresData } = await useFetch<{
 }>(() => "https://ws.audioscrobbler.com/2.0/?method=tag.getTopTags&api_key=e2ec98b041891e5f1163138c3515c552&format=json");
 const genres = genresData.value?.toptags?.tag;
 </script>
-
-<style lang="scss" scoped>
-ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-</style>
