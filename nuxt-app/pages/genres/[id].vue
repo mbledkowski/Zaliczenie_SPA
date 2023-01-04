@@ -1,12 +1,14 @@
 <template>
   <div v-if="genre">
-    <h1>Genre</h1>
+    <h1 class="text-5xl font-bold m-12">Genre</h1>
+    <div class="m-12">
     <h2>
       {{ genre.name }}
     </h2>
     <img :src="`https://source.unsplash.com/512x512/?${genre.name.split(' ').join('-')}-music`" />
     <p v-html="genre.wiki.content">
     </p>
+    </div>
   </div>
   <div v-else>Please refresh the webpage!</div>
 </template>
