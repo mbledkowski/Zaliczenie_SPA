@@ -17,6 +17,9 @@
               <li>
                 <nuxt-link to="/genres">Genres</nuxt-link>
               </li>
+              <li>
+                <nuxt-link to="/artists">Artists</nuxt-link>
+              </li>
             </ul>
           </div>
         </nav>
@@ -28,6 +31,9 @@
       <ul class="menu p-4 w-80 bg-base-100">
         <li>
           <nuxt-link to="/genres">Genres</nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/artists">Artists</nuxt-link>
         </li>
       </ul>
     </div>
@@ -47,6 +53,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .menu {
+    column-gap: 20px;
   }
 }
 </style>

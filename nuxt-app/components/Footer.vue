@@ -1,7 +1,7 @@
 <template>
   <footer class="footer footer-center p-4 bg-base-300 text-base-content">
     <div>
-      <p>Copyleft © 2023 - Some rights reserved by Maciej Błędkowski</p>
+      <p>Copyleft © 2023 - Some rights reserved by Maciej Błędkowski, Damian Kacprzak</p>
     </div>
   </footer>
 </template>
