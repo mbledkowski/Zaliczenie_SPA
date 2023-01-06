@@ -33,9 +33,6 @@
 
   const artist = artistData._rawValue.topartists.artist;
 
-  console.log(artist)
-  console.log(artistData)
-
 </script>
 
 <style scoped>
