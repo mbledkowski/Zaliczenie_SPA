@@ -1,22 +1,26 @@
 <template>
   <div v-if="top">
-    <h1 class="text-5xl font-bold m-12">TOP Songs</h1>
+    <h1 class="text-5xl font-bold m-12">TOP played songs</h1>
     <div class="m-9 flex flex-col flex-nowrap items-center">
       <ul class="flex flex-row flex-wrap justify-between items-stretch">
         <li v-for="t in top" :key="t.name" class="m-3">
-          <!-- <nuxt-link :to="`/top/${t.name}`"> -->
           <div class="card w-48 bg-base-100 shadow-xl min-h-full">
             <figure>
               <img :src="`https://source.unsplash.com/512x512/?${t.name.split(' ').join('-')}-music`"
                 :alt="`${_.capitalize(t.name)} t image`" height="256" width="256" />
             </figure>
             <div class="card-body items-center text-center">
-              <h2 class="card-title">Name: {{ _.capitalize(t.name) }}</h2>
-              <h2 class="card-artist">Artist: {{ _.capitalize(t.artist.name) }}</h2>
-              <h2 class="card-url">Playcount: {{ _.capitalize(t.playcount) }}</h2>
+              <nuxt-link :to="`/top/${t.name}`">
+                <h2 class="card-bordered rounded-md p-3 leading-5 hover:underline decoration-sky-500/30 font-bold">
+                  Track:<br>{{ t.name }}</h2>
+              </nuxt-link>
+              <nuxt-link :to="`/top/${t.artist.name}`">
+                <h2 class="card-bordered rounded-md p-3 leading-5 hover:underline decoration-sky-500/30 font-bold">
+                  Artist:<br>{{ t.artist.name }}</h2>
+              </nuxt-link>
+              <h2 class="card-bordered rounded-md p-3 font-bold">Playcount:<br>{{ t.playcount }}</h2>
             </div>
           </div>
-          <!-- </nuxt-link> -->
         </li>
       </ul>
       <div class="btn-group">
