@@ -5,7 +5,7 @@
             <img :src="`https://source.unsplash.com/512x512/?${t.name.split(' ').join('-')}-music`"
                 class="max-w-sm rounded-lg shadow-2xl" />
             <div>
-                <h2 class="text-5xl font-bold">{{ _.capitalize(t.name) }}</h2>
+                <h2 class="text-5xl font-bold">{{ (t.name}}</h2>
                 <p class="py-6" v-html="t.wiki.summary"></p>
             </div>
         </div>

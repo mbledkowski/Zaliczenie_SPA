@@ -6,7 +6,7 @@
         <li v-for="t in top" :key="t.name" class="m-3">
           <div class="card w-48 bg-base-100 shadow-xl min-h-full">
             <figure>
-              <img :src="`https://source.unsplash.com/512x512/?${t.name.split(' ').join('-')}-music`"
+              <img :src="`https://source.unsplash.com/512x512/?${t.artist.name.split(' ').join('-')}-music`"
                 :alt="`${_.capitalize(t.name)} t image`" height="256" width="256" />
             </figure>
             <div class="card-body items-center text-center">
@@ -33,19 +33,6 @@
   <div v-else>Please refresh the webpage!</div>
 </template>
 
-<!-- <script setup>
-
-import { useFetch } from "#app";
-
-definePageMeta({
-  layout: 'top',
-})
-const { data: topSongs } = await useFetch(`https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=poland&page=2&api_key=e2ec98b041891e5f1163138c3515c552&format=json`)
-
-const top = topSongs
-
-console.log(top);
-</script> -->
 <script lang="ts" setup>
 import _ from "lodash";
 const page = ref(1);
@@ -60,8 +47,4 @@ const top = ref(await getTop(page.value));
 watch(page, async (page) => {
   top.value = await getTop(page);
 })
-
-const { data: topSongs } = await useFetch(`https://ws.audioscrobbler.com/2.0/?method=tag.getinfo&tag=taylor+swift&api_key=e2ec98b041891e5f1163138c3515c552&format=json`)
-console.log(top)
-console.log(topSongs)
 </script>

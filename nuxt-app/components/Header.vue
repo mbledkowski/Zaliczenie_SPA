@@ -15,7 +15,7 @@
           </div>
           <div class="flex-1 px-2 mx-2">
             <nuxt-link to="/">
-              <h1>Music info 🎧</h1>
+              <h1 class="font-bold underline decoration-sky-500/30 decoration-2 underline-offset-4">Music info 🎧</h1>
             </nuxt-link>
           </div>
           <div class="flex-none hidden lg:block">
@@ -27,7 +27,7 @@
                 <nuxt-link to="/artists">Artists</nuxt-link>
               </li>
               <li>
-                <nuxt-link to="/top">TOP</nuxt-link>
+                <nuxt-link to="/top">TOP Tracks</nuxt-link>
               </li>
             </ul>
           </div>
@@ -45,7 +45,7 @@
           <nuxt-link to="/artists">Artists</nuxt-link>
         </li>
         <li>
-          <nuxt-link to="/top">TOP</nuxt-link>
+          <nuxt-link to="/top">TOP Tracks</nuxt-link>
         </li>
       </ul>
     </div>
